@@ -13,7 +13,7 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className='lg:px-28 px-5 sticky top-0 left-0 bg-white md:border-b-none border-b'>
+        <nav className='lg:px-28 px-5 sticky top-0 left-0 bg-white md:border-b-0 border-b'>
             <NavTopBar onMenuClick={onMenuClick} />
             <TopicHeadingBar className='md:!flex !hidden' />
             <div className={`md:hidden pt-5 overflow-hidden ${openMenu ? "block" : "hidden"}`}
