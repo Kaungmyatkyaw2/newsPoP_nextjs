@@ -18,7 +18,7 @@ const NextButton = () => {
     }
 
     return (
-        <Button onClick={onNavigate} variant={'ghost'}>Next</Button>
+        <Button type='button' onClick={onNavigate} variant={'ghost'}>Next</Button>
     )
 }
 

@@ -1,9 +1,8 @@
 "use client";
 
 import { CircleUser, Timer } from 'lucide-react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button';
-import { useRouter } from 'next/navigation';
 
 interface Props {
     article: Article
@@ -25,9 +24,11 @@ function formatDate(dateString: string) {
 
 export const ArticleCard = ({ article, className }: Props) => {
 
-    const router = useRouter()
+    const [formattedDate, setFormattedDate] = useState("")
 
-
+    useEffect(() => {
+        setFormattedDate(formatDate(article.publishedAt))
+    }, [])
 
 
     return (
@@ -38,14 +39,14 @@ export const ArticleCard = ({ article, className }: Props) => {
                 <p className='text-gray-500 pt-[15px]'>{article.description}</p>
                 <div className='flex-center flex-wrap !justify-start gap-5 pt-5'>
                     <div className='text-sm flex-center text-gray-950 space-x-2'>
-                        <CircleUser size={20} /><span dangerouslySetInnerHTML={{__html : article.author  || "Unknow"}}>
+                        <CircleUser size={20} /><span dangerouslySetInnerHTML={{ __html: article.author || "Unknow" }}>
                         </span></div>
                     <div className='text-sm flex-center text-gray-950 space-x-2'>
                         <Timer size={20} /><span>
-                            {formatDate(article.publishedAt)}</span></div>
+                            {formattedDate}</span></div>
 
                     <div className='text-sm flex-center flex-1 !justify-end text-gray-950 space-x-2'>
-                        <Button variant='outline' asChild>
+                        <Button variant='outline' type='button' asChild>
                             <a target='_blank' href={article.url}>Read</a>
                         </Button>
                     </div>

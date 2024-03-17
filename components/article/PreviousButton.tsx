@@ -18,7 +18,7 @@ const PreviousButton = () => {
     }
 
     return (
-        <Button disabled={page == 1} onClick={onNavigate} variant={'ghost'}>Previous</Button>
+        <Button type='button' disabled={page == 1} onClick={onNavigate} variant={'ghost'}>Previous</Button>
     )
 }
 
