@@ -7,8 +7,11 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "News Pop",
+  title: "NewsPOP",
   description: "Explore the world and universe",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export default function RootLayout({

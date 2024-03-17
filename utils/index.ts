@@ -28,5 +28,7 @@ export const fetchTopHeadlines = async (page?: number) => {
       options
     );
     return newsData.json();
-  } catch (error) {}
+  } catch (error) {
+    return error;
+  }
 };

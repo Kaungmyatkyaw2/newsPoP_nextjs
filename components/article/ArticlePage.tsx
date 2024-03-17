@@ -21,8 +21,8 @@ export const ArticlePage = ({ data, title }: Props) => {
             <div className='md:col-span-7 col-span-12 space-y-10'>
                 <h1 className='text-3xl font-bold'>{formattedTitle}</h1>
                 {
-                    data.length ? data.map((el) => <ArticleCard key={el.title} article={el} />) : <div className='py-[30px]'>
-                        No Data is found with this tilte
+                    data?.length ? data.map((el) => <ArticleCard key={el.title} article={el} />) : <div className='py-[30px]'>
+                        No Data is found with this content
                     </div>
                 }
             </div>
