@@ -38,8 +38,8 @@ export const ArticleCard = ({ article, className }: Props) => {
                 <p className='text-gray-500 pt-[15px]'>{article.description}</p>
                 <div className='flex-center flex-wrap !justify-start gap-5 pt-5'>
                     <div className='text-sm flex-center text-gray-950 space-x-2'>
-                        <CircleUser size={20} /><span>
-                            {article.author || "Unknown"}</span></div>
+                        <CircleUser size={20} /><span dangerouslySetInnerHTML={{__html : article.author  || "Unknow"}}>
+                        </span></div>
                     <div className='text-sm flex-center text-gray-950 space-x-2'>
                         <Timer size={20} /><span>
                             {formatDate(article.publishedAt)}</span></div>
