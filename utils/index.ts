@@ -7,14 +7,13 @@ const options: RequestInit = {
 
 const URL = "https://newsapi.org/v2";
 
-export const fetchNews = async (q: string) => {
+export const fetchNews = async (q: string, page?: number) => {
   try {
     const newsData = await fetch(
-      `${URL}/everything?q=${q}&pageSize=10`,
+      `${URL}/everything?q=${q}&pageSize=10&page=${page || 1}`,
       options
     );
     const data = await newsData.json();
-
 
     return data;
   } catch (error) {

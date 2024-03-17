@@ -1,6 +1,8 @@
 import React from 'react'
 import { ArticleCard, RandomNews } from '.'
 import { Button } from '../ui/button'
+import NextButton from './NextButton';
+import PreviousButton from './PreviousButton';
 
 interface Props {
     data: Article[],
@@ -19,13 +21,15 @@ export const ArticlePage = ({ data, title }: Props) => {
             <div className='md:col-span-7 col-span-12 space-y-10'>
                 <h1 className='text-3xl font-bold'>{formattedTitle}</h1>
                 {
-                    data.map((el) => <ArticleCard key={el.title} article={el} />)
+                    data.length ? data.map((el) => <ArticleCard key={el.title} article={el} />) : <div className='py-[30px]'>
+                        No Data is found with this tilte
+                    </div>
                 }
             </div>
             <RandomNews />
-            <div className='col-span-12 w-full flex justify-between'>
-                <Button variant={'ghost'}>Previous</Button>
-                <Button variant={"ghost"}>Next</Button>
+            <div className='col-span-12 w-full flex justify-between pt-5'>
+                <PreviousButton />
+                <NextButton />
             </div>
         </div>)
 }

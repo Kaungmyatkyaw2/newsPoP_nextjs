@@ -7,9 +7,7 @@ const Home = async () => {
 
   const res: { status: string, totalResults: 35, articles: Article[] } = await fetchTopHeadlines()
 
-  if (res.status !== "ok") {
-    return <></>
-  }
+
 
   return (
     <ArticlePage title='Top Headlines News' data={res.articles} />
