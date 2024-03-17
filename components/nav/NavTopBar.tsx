@@ -16,7 +16,7 @@ export const NavTopBar = ({ onMenuClick }: Props) => {
             <Link href={"/"}>
                 <h1 className='text-xl font-bold'>NewsPOP</h1>
             </Link>            <SearchBox className='md:flex hidden' />
-            <Button type='button' onClick={onMenuClick} className='md:hidden flex' size={"icon"} variant={"outline"}>
+            <Button aria-label='open_menu_box' type='button' onClick={onMenuClick} className='md:hidden flex' size={"icon"} variant={"outline"}>
                 <Menu />
             </Button>
 

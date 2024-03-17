@@ -1,7 +1,5 @@
-"use client";
-
 import { CircleUser, Timer } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Button } from '../ui/button';
 
 interface Props {
@@ -24,11 +22,6 @@ function formatDate(dateString: string) {
 
 export const ArticleCard = ({ article, className }: Props) => {
 
-    const [formattedDate, setFormattedDate] = useState("")
-
-    useEffect(() => {
-        setFormattedDate(formatDate(article.publishedAt))
-    }, [])
 
 
     return (
@@ -43,10 +36,10 @@ export const ArticleCard = ({ article, className }: Props) => {
                         </span></div>
                     <div className='text-sm flex-center text-gray-950 space-x-2'>
                         <Timer size={20} /><span>
-                            {formattedDate}</span></div>
+                            {formatDate(article.publishedAt)}</span></div>
 
                     <div className='text-sm flex-center flex-1 !justify-end text-gray-950 space-x-2'>
-                        <Button variant='outline' type='button' asChild>
+                        <Button aria-label='read_article' variant='outline' type='button' asChild>
                             <a target='_blank' href={article.url}>Read</a>
                         </Button>
                     </div>

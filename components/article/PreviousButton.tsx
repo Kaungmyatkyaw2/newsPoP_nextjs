@@ -18,7 +18,7 @@ const PreviousButton = () => {
     }
 
     return (
-        <Button type='button' disabled={page == 1} onClick={onNavigate} variant={'ghost'}>Previous</Button>
+        <Button aria-label='go_previous_page' type='button' disabled={page == 1} onClick={onNavigate} variant={'ghost'}>Previous</Button>
     )
 }
 

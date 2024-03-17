@@ -18,7 +18,7 @@ const NextButton = () => {
     }
 
     return (
-        <Button type='button' onClick={onNavigate} variant={'ghost'}>Next</Button>
+        <Button aria-label='go_next_page' type='button' onClick={onNavigate} variant={'ghost'}>Next</Button>
     )
 }
 

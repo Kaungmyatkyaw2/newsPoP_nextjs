@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "NewsPOP",
   description: "Explore the world and universe",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.svg",
   }
 };
 
