@@ -1,5 +1,5 @@
 
-import { ArticleCard, RandomNews } from '@/components/article'
+import { ArticlePage } from '@/components/article'
 import { fetchTopHeadlines } from '@/utils'
 import React from 'react'
 
@@ -12,15 +12,7 @@ const Home = async () => {
   }
 
   return (
-    <div className='grid grid-cols-12 md:gap-7'>
-      <div className='md:col-span-7 col-span-12 space-y-10'>
-        <h1 className='text-3xl font-bold'>Top Headlines News</h1>
-        {
-          res.articles.map((el) => <ArticleCard key={el.title} article={el} />)
-        }
-      </div>
-      <RandomNews />
-    </div>
+    <ArticlePage title='Top Headlines News' data={res.articles} />
   )
 }
 

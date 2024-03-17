@@ -13,15 +13,21 @@ export const fetchNews = async (q: string) => {
       `${URL}/everything?q=${q}&pageSize=10`,
       options
     );
-    return newsData.json();
+    const data = await newsData.json();
+
+
+    return data;
   } catch (error) {
     return error;
   }
 };
 
-export const fetchTopHeadlines = async () => {
+export const fetchTopHeadlines = async (page?: number) => {
   try {
-    const newsData = await fetch(`${URL}/top-headlines?country=us`, options);
+    const newsData = await fetch(
+      `${URL}/top-headlines?country=us&page=${page || 1}&pageSize=10`,
+      options
+    );
     return newsData.json();
   } catch (error) {}
 };

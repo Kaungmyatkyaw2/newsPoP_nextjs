@@ -1,5 +1,9 @@
+"use client";
+
 import { CircleUser, Timer } from 'lucide-react'
 import React from 'react'
+import { Button } from '../ui/button';
+import { useRouter } from 'next/navigation';
 
 interface Props {
     article: Article
@@ -21,6 +25,11 @@ function formatDate(dateString: string) {
 
 export const ArticleCard = ({ article, className }: Props) => {
 
+    const router = useRouter()
+
+
+
+
     return (
         <div className={`max-w-full w-full rounded-[10px] h-fit p-5 shadow-sm border ${className}`}>
             <img src={article.urlToImage} alt='Content-Image' />
@@ -34,6 +43,12 @@ export const ArticleCard = ({ article, className }: Props) => {
                     <div className='text-sm flex-center text-gray-950 space-x-2'>
                         <Timer size={20} /><span>
                             {formatDate(article.publishedAt)}</span></div>
+
+                    <div className='text-sm flex-center flex-1 !justify-end text-gray-950 space-x-2'>
+                        <Button variant='outline' asChild>
+                            <a target='_blank' href={article.url}>Read</a>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>)
