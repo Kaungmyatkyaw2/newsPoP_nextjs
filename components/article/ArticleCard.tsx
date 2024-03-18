@@ -28,7 +28,7 @@ export const ArticleCard = ({ article, className }: Props) => {
     return (
         <div className={`max-w-full w-full rounded-[10px] h-fit p-5 shadow-sm border ${className}`}>
             <div className='w-full h-[300px] relative z-[-1]'>
-                <Image src={article.urlToImage || ""} fill alt='Content-Image' objectFit='cover' />
+                <Image src={article.urlToImage || "/image_placeholder.png"} fill alt='Content-Image' objectFit='cover' />
             </div>
             <div>
                 <h1 className='font-bold text-2xl pt-[15px] overflow-hidden'
