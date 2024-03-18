@@ -15,7 +15,8 @@ export const NavTopBar = ({ onMenuClick }: Props) => {
         <div className='w-full flex justify-between items-center py-5 md:border-b'>
             <Link href={"/"}>
                 <h1 className='text-xl font-bold'>NewsPOP</h1>
-            </Link>            <SearchBox className='md:flex hidden' />
+            </Link>            
+            <SearchBox className='md:flex hidden' />
             <Button aria-label='open_menu_box' type='button' onClick={onMenuClick} className='md:hidden flex' size={"icon"} variant={"outline"}>
                 <Menu />
             </Button>

@@ -7,8 +7,6 @@ const Home = async ({ searchParams }: { searchParams: { page: number } }) => {
 
   const res: NewsApiResponse = await fetchTopHeadlines(searchParams.page)
 
-
-
   return (
     <ArticlePage title='Top Headlines News' data={res.articles} />
   )
