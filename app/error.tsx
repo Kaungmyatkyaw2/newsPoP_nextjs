@@ -3,7 +3,7 @@
 import { LucideBinary } from 'lucide-react'
 import React from 'react'
 
-const error = ({ reset }: { reset: any }) => {
+const error = () => {
     return (
         <div className='py-[30px] flex-center flex-col space-y-[10px]'>
             <LucideBinary size={50} />
