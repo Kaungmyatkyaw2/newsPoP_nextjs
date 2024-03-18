@@ -5,7 +5,12 @@ import { Button } from '../ui/button'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 
-const NextButton = () => {
+
+interface Props {
+    lastResultLen: number
+}
+
+const NextButton = ({ lastResultLen }: Props) => {
 
     const pathname = usePathname()
     const router = useRouter()
@@ -18,7 +23,7 @@ const NextButton = () => {
     }
 
     return (
-        <Button aria-label='go_next_page' type='button' onClick={onNavigate} variant={'ghost'}>Next</Button>
+        <Button disabled={lastResultLen < 10} aria-label='go_next_page' type='button' onClick={onNavigate} variant={'ghost'}>Next</Button>
     )
 }
 

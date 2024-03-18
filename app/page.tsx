@@ -5,7 +5,7 @@ import React from 'react'
 
 const Home = async ({ searchParams }: { searchParams: { page: number } }) => {
 
-  const res: { status: string, totalResults: 35, articles: Article[] } = await fetchTopHeadlines(searchParams.page)
+  const res: NewsApiResponse = await fetchTopHeadlines(searchParams.page)
 
 
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { ArticleCard, RandomNews } from '.'
-import { Button } from '../ui/button'
 import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
 
@@ -29,7 +28,7 @@ export const ArticlePage = ({ data, title }: Props) => {
             <RandomNews />
             <div className='col-span-12 w-full flex justify-between pt-5'>
                 <PreviousButton />
-                <NextButton />
+                <NextButton lastResultLen={data.length} />
             </div>
         </div>)
 }

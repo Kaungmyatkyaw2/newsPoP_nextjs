@@ -3,7 +3,7 @@ import { ArticleCard } from '.'
 import { fetchNews } from '@/utils'
 
 export const RandomNews = async () => {
-    const res: { status: string, totalResults: 35, articles: Article[] } = await fetchNews("random news")
+    const res: NewsApiResponse = await fetchNews("random news")
 
     return (
         <div className='md:block hidden col-span-5 space-y-5'>
