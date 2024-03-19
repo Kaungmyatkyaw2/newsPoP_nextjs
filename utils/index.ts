@@ -10,7 +10,7 @@ const URL = "https://newsapi.org/v2";
 export const fetchNews = async (q: string, page?: number) => {
   try {
     const newsData = await fetch(
-      `${URL}/everything?q=${q}&pageSize=10&page=${page || 1}`,
+      `${URL}/everything?q=${q}&pageSize=10&page=${page || 1}&sortBy=publishedAt`,
       options
     );
     const data = await newsData.json();
@@ -24,7 +24,7 @@ export const fetchNews = async (q: string, page?: number) => {
 export const fetchTopHeadlines = async (page?: number) => {
   try {
     const newsData = await fetch(
-      `${URL}/top-headlines?country=us&page=${page || 1}&pageSize=10`,
+      `${URL}/top-headlines?country=us&page=${page || 1}&pageSize=10&sortBy=publishedAt`,
       options
     );
     return newsData.json();
